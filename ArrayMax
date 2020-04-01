@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class ArrayMax {
+	 static int n;
+	 static int[] array = new int[100];
+	 public static void main(String[] args){				
+
+		          Scanf();
+
+	    }
+
+	public static void Scanf(){								
+
+		 @SuppressWarnings("resource")						
+		Scanner sc =  new Scanner(System.in); 
+		 System.out.print("输入数组个数n:"+"\n");
+		   n = sc.nextInt();
+		   if(n <= 0)
+			   System.out.print("ERROR");
+		   else
+		   {
+		     System.out.print("输入数组:"+"\n");
+	 	      for(int i  =  0; i < n; i++)
+		         {
+			         array[i]  =  sc.nextInt();
+		         }
+	 	      Print();
+		   }
+	 }
+
+	 public static void Print(){							
+
+		 System.out.print("该数组最大字段和为："+arrayMax(array));
+	 }
+	 
+	 public static int arrayMax(int[] array){					
+	        int sum  =  0;
+	        int max  =  0;
+	        for(int i = 0;i < array.length;i++)
+	        {
+	        	sum += array[i];
+	        	if(sum <= 0)
+	        		sum = 0;
+	        	if(sum > max)
+	        		max  =  sum;
+	        }
+	        return max;
+	    }
+
+}
